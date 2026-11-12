@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Frisbee Upload — Take your shot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header><a class="brand" href="./" aria-label="Frisbee Upload Startseite"><span class="brand-mark">↗</span> fling<span class="brand-dot">.</span></a><span class="edition">A LITTLE PLAY IN YOUR DAY</span><span class="local"><i></i> Lokale Demo</span></header>
+  <section class="intro"><div class="eyebrow">DATEIEN MIT SCHWUNG</div><h1>Ein Upload.<br>Ein guter Wurf.</h1><p>Wähle eine Datei. Gib ihr etwas Schwung.<br>Den Rest erledigt die Flugbahn.</p></section>
+  <section class="playground" aria-label="Interaktive Frisbee Upload Demo">
+    <div class="stage-top"><div><h2>Upload files</h2><p>Drag and drop, or take the shot.</p></div><span class="counter">Gefangen <strong id="count">0</strong></span></div>
+    <div id="arena" class="arena">
+      <button id="dropzone" class="dropzone" aria-label="Datei auswählen oder hier ablegen"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 15V3m-4 4 4-4 4 4M5 14v6h14v-6"/></svg><strong>Drop files here</strong><span>oder auswählen und werfen</span><span class="target-label">DISC GOLF CLUB · TARGET 01</span></button>
+      <svg id="basket" class="basket" viewBox="0 0 240 290" aria-label="Discgolf-Ziel mit Ketten und Fangnetz">
+        <defs><linearGradient id="steel"><stop stop-color="#85908b"/><stop offset=".4" stop-color="#eef2ed"/><stop offset="1" stop-color="#88928b"/></linearGradient><linearGradient id="orange" x2="0" y2="1"><stop stop-color="#ffae73"/><stop offset="1" stop-color="#db642c"/></linearGradient></defs>
+        <ellipse cx="120" cy="271" rx="66" ry="9" fill="#293b30" opacity=".08"/>
+        <path d="M116 58h8v202h-8z" fill="url(#steel)"/><path d="M82 268l38-17 38 17" stroke="#8b958d" stroke-width="5" fill="none"/>
+        <g id="chains" fill="none" stroke="#9aa49c" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"><path d="M53 65Q63 135 111 168M72 66Q79 134 114 169M91 67Q95 140 117 170M110 67L119 170M130 67L121 170M149 67Q145 140 123 170M168 66Q161 134 126 169M187 65Q177 135 129 168"/><path d="M57 65Q85 127 118 161M183 65Q155 127 122 161" opacity=".45"/></g>
+        <ellipse cx="120" cy="61" rx="77" ry="14" fill="url(#orange)"/><path d="M43 61v12c23 16 131 16 154 0V61c-26 17-129 17-154 0" fill="#ed7c40"/><ellipse cx="120" cy="61" rx="67" ry="8" fill="#ffc29a"/><text x="120" y="76" fill="#77371b" text-anchor="middle" font-size="7" letter-spacing="3">FLING DISC CLUB</text>
+        <g id="net"><path d="M43 171l19 49q58 22 116 0l19-49" fill="#dbe1d9" fill-opacity=".32" stroke="#a0aaa2" stroke-width="2"/><g fill="none" stroke="#a0aaa2" stroke-width="1.5"><path d="M48 175l26 49M69 180l20 48M92 183l10 47M116 184v47M140 183l-4 47M163 181l-13 47M187 176l-23 49M53 190q67 26 134 0M58 206q62 24 124 0M64 219l25-37m3 46 24-44m20 46 27-49m-54 49 31-47"/></g><ellipse cx="120" cy="171" rx="78" ry="16" fill="#f1f3ee" fill-opacity=".5" stroke="#eb824b" stroke-width="6"/><path d="M42 172c22 19 131 21 156 0" fill="none" stroke="#f5a36f" stroke-width="4"/></g>
+      </svg>
+      <svg id="trajectory" class="trajectory" aria-hidden="true"><path id="aim-path" fill="none" stroke="#dd875c" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/></svg>
+      <div id="disc-shadow" class="disc-shadow"></div>
+      <button id="disc" class="disc" aria-label="Demo-Frisbee ziehen und zum Ziel werfen"><span class="disc-ring"></span><span class="disc-label" id="disc-label">DEMO</span><span class="disc-center">↗</span></button>
+      <span class="launch-label" id="launch-label">ANFASSEN. ZIEHEN. LOSLASSEN.<svg width="75" height="35" viewBox="0 0 75 35"><path d="M72 5Q35 0 8 28m0 0 3-11M8 28l12-3" fill="none" stroke="currentColor"/></svg></span>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <div id="particles" aria-hidden="true"></div>
+    </div>
+    <div class="stage-bottom"><span id="filename">Deine erste Runde? Wirf die Demo-Disc.</span><button id="auto-throw">Probwurf <span>↗</span></button></div>
+    <input id="file-input" type="file" multiple hidden>
+  </section>
+  <footer><span><b>01</b> Datei wählen</span><span><b>02</b> Zum Ziel werfen</span><span><b>03</b> Treffer feiern</span></footer>
+  <p class="privacy">Deine Dateien bleiben auf deinem Gerät. Diese Demo überträgt keine Dateien.</p>
+</main>
+<script src="app.js"></script>
+</body></html>
